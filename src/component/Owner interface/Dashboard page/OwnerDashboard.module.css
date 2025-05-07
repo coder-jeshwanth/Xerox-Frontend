@@ -1,0 +1,245 @@
+.pageContainer {
+    background-color: #21294c;
+    color: white; /* Optional: to ensure text is visible on a black background */
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+}
+
+.dashboardd {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.errorr {
+    color: red;
+}
+
+.containerBoxx {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the containers horizontally */
+    padding-top: 50px;
+}
+
+.userGroupp {
+    border: 2px solid white;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: inline-block; /* Allow the container to adjust its size based on content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.fileContainerr {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f9f9f9;
+    color: black;
+
+}
+
+.dataItemm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.fileIconn {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #f9f9f9;
+}
+
+.fileInfoo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px; /* Add padding to the right */
+    background-color: #f9f9f9;
+}
+
+.fileNamee {
+    font-weight: bold;
+    padding-right: 50px; /* Add padding to the right */
+    background-color: #f9f9f9;
+}
+
+.fileSizee {
+    color: gray;
+    margin-right: 10px;
+    padding-right: 10px; /* Add padding to the right */
+    background-color: #f9f9f9;
+}
+
+.downloadButtonn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.usernameContainer {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    position: relative; /* Allow positioning of the cancel icon */
+    border-bottom: 8px solid black; /* Move the border-bottom here */
+}
+
+.usernamee {
+    font-size: 25px;
+    font-weight: bold;
+    background: transparent;
+    color: black;
+}
+
+.cancelIcon {
+    position: absolute;
+    right: 10px; /* Position the cancel icon to the right */
+    cursor: pointer;
+    font-size: 24px;
+    color: black; /* Optional: set the color of the cancel icon */
+}
+
+.header {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    width: 10%;
+}
+
+.searchContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+}
+
+.searchBar {
+    width: 100%;
+    padding: 5px 30px 5px 10px; /* Add padding to the right for the icon */
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 50px;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 10px;
+    margin-right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #ccc;
+}
+
+
+.headerButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.headerButton {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: black;
+}
+
+.buttonIcon {
+    margin-right: 5px;
+    font-size: 40px;
+}
+
+.headerButton:hover .buttonText {
+    visibility: visible;
+    opacity: 1;
+}
+
+.headerButton:hover .buttonText:hover + .buttonIcon {
+    color: red; /* Change the color of the delete icon on hover */
+}
+
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loaderIcon {
+    font-size: 3rem; /* Adjust the size as needed */
+    color: white; /* Adjust the color as needed */
+    animation: spin 2s linear infinite; /* Add the spin animation */
+}
+
+.userGroupp.downloaded {
+    background-color: red;
+}
+
+.usernameContainer.downloaded {
+    background-color: grey;
+    opacity: 0.5;
+}
+
+.fileContainerr.downloaded{
+    background-color: grey;
+    opacity: 0.5;
+}
+
+.fileAttributes {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the attributes */
+    gap: 10px;
+    padding-right: 50px;
+}
+
+.fileAttributes p {
+    margin: 0;
+}
+
+.timer {
+    font-size: 20px;
+    margin-left: 10px;
+    color: black;
+}
+
+.gradientIcon {
+    background: linear-gradient(90deg, red, green, blue);
+    -webkit-background-clip: text;
+    color: red;
+    -webkit-text-fill-color: transparent;
+}
+
+.blackIcon {
+    color: black;
+}
+
+
+

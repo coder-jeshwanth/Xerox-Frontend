@@ -1,0 +1,88 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #21294c 50%, white 50%);
+}
+
+.priImage {
+    margin-right: 250px; /* Adjust the margin as needed */
+    width: 20%; /* Adjust the width as needed */
+    height: auto;
+    margin-top: -90px;
+}
+
+.loginForm {
+    background-color: transparent;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.inputGroup {
+    margin-top: 50px;
+}
+
+.inputBox {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 12px;
+    border: none;
+    border-bottom: 5px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.inputBox input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    padding: 5px;
+    background-color: transparent;
+    color: black;
+}
+
+.icon {
+    color: #555;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.eyeIcon {
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+.loginBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #232a50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.loginBtn:hover {
+    background-color: #1a2140;
+}
+
+.errorMessage {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.inputBox input#username {
+    color: white !important; /* Set the text color to white for username input */
+}
+
+.inputBox input#password {
+    color: black !important; /* Set the text color to black for password input */
+}
