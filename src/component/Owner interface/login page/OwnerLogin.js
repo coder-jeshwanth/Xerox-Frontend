@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaUser, FaEye } from "react-icons/fa";
 import { CiLock } from "react-icons/ci";
 import styles from "./OwnerLogin.module.css";
+import config from "../../../config";
 
 const OwnerLogin = () => {
     const [username, setUsername] = useState("");
@@ -14,7 +15,7 @@ const OwnerLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://192.168.29.114:8080/api/auth/login", {
+            const response = await fetch(`${config.baseUrl}${config.api.login}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"

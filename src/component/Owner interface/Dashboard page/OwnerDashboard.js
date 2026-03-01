@@ -24,7 +24,7 @@ const OwnerDashboard = () => {
             }
 
             try {
-                const response = await fetch(`${config.baseUrl}/api/auth/all`, {
+                const response = await fetch(`${config.baseUrl}${config.api.getAllUsers}`, {
                     method: "GET",
                     headers: {
                         "Authorization": `Bearer ${token}`
@@ -57,7 +57,7 @@ const OwnerDashboard = () => {
 
     const handleDeleteUser = async (phoneNumber) => {
         console.log(`Attempting to delete user: ${phoneNumber}`);
-        const deleteUrl = `${config.baseUrl}/api/users/delete/${phoneNumber}`;
+        const deleteUrl = `${config.baseUrl}${config.api.deleteUser(phoneNumber)}`;
 
         try {
             const response = await fetch(deleteUrl, { method: "DELETE" });
@@ -84,7 +84,7 @@ const OwnerDashboard = () => {
     };
 
     const handleDownload = async (fileId, username, phoneNumber, fileName) => {
-        const fileUrl = `${config.baseUrl}/api/files/download/${fileId}?username=${username}&phoneNumber=${phoneNumber}`;
+        const fileUrl = `${config.baseUrl}${config.api.downloadFile(fileId, username, phoneNumber)}`;
         console.log(`Downloading file from URL: ${fileUrl}`);
         try {
             const response = await fetch(fileUrl, {

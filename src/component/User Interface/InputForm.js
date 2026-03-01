@@ -4,11 +4,9 @@ import { RiDeleteBin6Line } from "react-icons/ri"; // Import the delete icon
 import { FaUser } from "react-icons/fa"; // Import the user icon
 import { IoCallSharp } from "react-icons/io5"; // Import the call icon
 import { IoSettingsOutline } from "react-icons/io5";
+import config from "../../config";
 
 const printerIcon = require("../printer.png"); // Import the printer image
-
-// Define the base URL
-const baseUrl = `http://192.168.29.114:8080`;
 
 const FormComponent = () => {
     const [username, setUsername] = useState("");
@@ -43,7 +41,7 @@ const FormComponent = () => {
 
         // Trigger the API call with the respective values
         const fileId = selectedFile.fileId;
-        const apiUrl = `${baseUrl}/api/users/filePreferences?fileId=${fileId}&layout=${layout}&color=${color}&noOfCopies=${noOfCopies}&side=${side}`;
+        const apiUrl = `${config.baseUrl}${config.api.filePreferences(fileId, layout, color, noOfCopies, side)}`;
         try {
             const response = await fetch(apiUrl, {
                 method: "POST"
@@ -88,7 +86,7 @@ const FormComponent = () => {
             return;
         }
         try {
-            const response = await fetch(`${baseUrl}/api/users/check-phone-username?phoneNumber=${phoneNumber}&username=${username}`);
+            const response = await fetch(`${config.baseUrl}${config.api.checkPhoneUsername(phoneNumber, username)}`);
             const data = await response.json();
             if (data.message === "proceed") {
                 setShowUploadButton(true);
@@ -118,7 +116,7 @@ const FormComponent = () => {
         });
 
         try {
-            const response = await fetch(`${baseUrl}/api/users/file`, {
+            const response = await fetch(`${config.baseUrl}${config.api.uploadFile}`, {
                 method: "POST",
                 body: formData
             });
@@ -147,7 +145,7 @@ const FormComponent = () => {
 
     const fetchFiles = async (phone = phoneNumber) => {
         try {
-            const response = await fetch(`${baseUrl}/api/files/user/phone/${phone}`);
+            const response = await fetch(`${config.baseUrl}${config.api.getUserFiles(phone)}`);
             const data = await response.json();
             setFetchedFiles(data);
             if (data.length > 0) {
@@ -161,7 +159,7 @@ const FormComponent = () => {
     const handleDelete = async () => {
         if (!fileToDelete) return;
         try {
-            const response = await fetch(`${baseUrl}/api/files/${fileToDelete.fileId}`, {
+            const response = await fetch(`${config.baseUrl}${config.api.deleteFile(fileToDelete.fileId)}`, {
                 method: "DELETE"
             });
             const data = await response.json();
@@ -202,7 +200,7 @@ const FormComponent = () => {
 
     const handleDeleteAllFiles = async () => {
         try {
-            const response = await fetch(`${baseUrl}/api/users/delete/${phoneNumber}`, {
+            const response = await fetch(`${config.baseUrl}${config.api.deleteUser(phoneNumber)}`, {
                 method: "DELETE"
             });
             const data = await response.json();
@@ -394,7 +392,7 @@ const FormComponent = () => {
                                     <input type="radio" name="side" value="single"
                                            onChange={(e) => setSide(e.target.value)} /> Single side
                                 </label>
-                                <label>
+                                <label>1
                                     <input type="radio" name="side" value="double"
                                            onChange={(e) => setSide(e.target.value)}/> Double side
                                 </label>
